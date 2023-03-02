@@ -85,11 +85,21 @@
         label{cursor: pointer;}
         .slide{display: none;}
         /*only one chan be checked at a time; that's how it works; v-clever*/
+        
         #slide1:checked ~ .slide1,
         #slide2:checked ~ .slide2,
         #slide3:checked ~ .slide3{
             display: block;
         }
+
+        #slide1:checked ~#slide1-label,
+        #slide2:checked ~#slide2-label,
+        #slide3:checked ~#slide3-label
+        {
+            background-color: #000b16;
+            color: #fff;
+        }
+
 
         /* Responsive styles */
 
@@ -144,7 +154,7 @@
 
 <body id="body" style="margin: 0 !important; padding: 0 !important">
     <!--outer fluid table -->
-    <table border="0" role="presentation" cellpadding="0" cellspacing="0" width="100%"
+    <table border="0" role="presentation" cellpadding="0" cellspacing="0" width="100    %"
         style="font-family: Arial; margin-left: auto; margin-right: auto">
         <tr>
             <td align="center">
@@ -241,7 +251,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <p style="font-size: 18px;"> here are some of the tools the seminar will be practicing with</p>
+                            <p style="font-size: 18px;"> here are some of the tools we will be practicing with</p>
                         </td>
                     </tr>
                     <!-- three column section-->
@@ -253,7 +263,7 @@
                                     <td>
                                         <!-- left table -->
                                         <!-- wanted align to be left but it causes a gap between the photos-->
-                                        <table border="0" align="right" cellpadding="0" cellspacing="0"
+                                        <table border="0" align="left" cellpadding="0" cellspacing="0"
                                             role="presentation" width="33%" class="block">
                                             <tr>
                                                 <td id="pallete-knife" align="center">
@@ -269,13 +279,15 @@
                                                     min-width: 100px;
                                                     width: 100%;
                                                     height: auto;
+                                                    margin: auto 10px;
+                                                    border: 2px solid rgba(0, 0, 0, .5);
                                                 ">
 
                                                 </td>
                                             </tr>
                                         </table>
                                         <!-- middle table -->
-                                        <table align="right" border="0" cellpadding="0" cellspacing="0"
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0"
                                             role="presentation" width="33%" class="block">
                                             <tr>
                                                 <td id="fan-brush" align="center">
@@ -291,12 +303,14 @@
                                                     min-width: 100px;
                                                     width: 100%;
                                                     height: auto;
+                                                    margin: auto 10px;
+                                                    border: 2px solid rgba(0, 0, 0, .5);
                                                     ">
                                                 </td>
                                             </tr>
                                         </table>
                                         <!-- right table -->
-                                        <table align="right" border="0" cellpadding="0" cellspacing="0"
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0"
                                             role="presentation" width="33%" class="block">
                                             <tr>
                                                 <td id="2-inch-brush" align="center">
@@ -312,6 +326,8 @@
                                                     min-width: 100px;
                                                     width: 100%;
                                                     height: auto;
+                                                    margin: auto 10px;
+                                                    border: 2px solid rgba(0, 0, 0, .5);
                                                     ">
                                                 </td>
                                             </tr>
@@ -338,13 +354,13 @@
                             <input type="radio" name="slides" id="slide3">
                             
                             <!--labels-->
-                            <label class="slide-label" for="slide1" style="border:2px solid black; display: inline-block; margin: 10; padding: 15px 30px;">
+                            <label id="slide1-label" class="slide-label mobile" for="slide1" style="border:2px solid black; display: inline-block; margin: 10; padding: 15px 30px;">
                                 Audrey Golden
                             </label>
-                            <label class="slide-label" for="slide2" style="border:2px solid black; display: inline-block; margin: 10; padding:15px 30px;">
+                            <label id="slide2-label" class="slide-label mobile" for="slide2" style="border:2px solid black; display: inline-block; margin: 10; padding:15px 30px;">
                                 Steve Ross
                             </label>
-                            <label class="slide-label" for="slide3" style="border:2px solid black; display: inline-block; margin: 10; padding:15px 30px;">
+                            <label id="slide3-label" class="slide-label mobile" for="slide3" style="border:2px solid black; display: inline-block; margin: 10; padding:15px 30px;">
                                 Dana Jester
                             </label>
                             <!--content-->
