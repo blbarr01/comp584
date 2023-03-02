@@ -90,6 +90,7 @@
         #slide3:checked ~ .slide3{
             display: block;
         }
+
         /* Responsive styles */
 
         @media screen and (max-width: 600px) {
@@ -104,6 +105,31 @@
             background-color: tomato !important; 
             transform: translateY(10px);
         }
+
+        @keyframes fadein{
+            from{opacity: 0; transform: scale(0.8);}
+            to{opacity:1; transform: scale(1);}
+        }
+
+        @keyframes whirly{
+            0%{transform: rotate(0deg); opacity: 0;}
+            50%{transform: rotate(765deg); opacity:.5;}
+            100%{transform: rotate(720deg); opacity: 1;}
+        }
+
+        @keyframes from-left{
+            0%   { transform: translate(-300px, 0); }
+            100% { transform: translate( 0px, 0); }
+        }
+        @keyframes from-right{
+            0% { transform: translate( 300px, 0);opacity: 0;}
+            1000% { transform: translate(0px, 0);opacity: 1;}
+        }
+
+        .fade1{animation: 1.5s 1 fadein;}
+        .whirl{animation: 2s 1 ease-in whirly;}
+        .slide-left{animation:1s 1 linear from-left;}
+        .slide-right{animation: 1s 1 linear from-right;}
 
         /* 
       originally all fonts were in rem; however, 
@@ -128,7 +154,7 @@
                     <tr>
                         <td align="center">
                             <img src="https://cf.geekdo-images.com/I0dO3GEStulLd88B7NHavw__opengraph_left/img/OR5Fo2bb4jbBWblI1kdv4J336Kk=/fit-in/445x445/filters:strip_icc()/pic3652437.jpg"
-                                alt="portrait photo of Bob Ross" width="600" border="0" style="
+                                alt="portrait photo of Bob Ross" width="600" border="0" class="fade1 whirl"style="
                                 display: block;
                                 max-width: 100%;
                                 min-width: 100px;
@@ -153,6 +179,7 @@
                     <!--hero image-->
                     <tr>
                         <td align="center" background="https://image.pbs.org/contentchannels/DQhaEaX-background-1U3qFyO.png?focalcrop=1200x630x50x10&format=auto" bgcolor="#000b16" 
+                        class="fade1"
                         style="
                             background: url('https://image.pbs.org/contentchannels/DQhaEaX-background-1U3qFyO.png?focalcrop=1200x630x50x10&format=auto');
                             background-position: center;
@@ -160,7 +187,7 @@
                             background-repeat: no-repeat;
                             background-color:#000b16;
                             padding: 0 4px;
-                ">
+                            " >
                             <h2 style="
                                     color: #fff;
                                     text-align: center;
@@ -242,6 +269,7 @@
                                                     width: 100%;
                                                     height: auto;
                                                 ">
+
                                                 </td>
                                             </tr>
                                         </table>
@@ -316,18 +344,18 @@
                                 Steve Ross
                             </label>
                             <label class="slide-label" for="slide3" style="border:2px solid black; display: inline-block; margin: 10; padding:15px 30px;">
-                                Dorothy Dent
+                                Dana Jester
                             </label>
                             <!--content-->
-                            <div class="slide slide1" style="margin-top: 10px;">
-                                <img src="https://www.twoinchbrush.com/images/painting235.webp" alt="Ocean Sunrise">
+                            <div class="slide slide1 slide-left" style="margin-top: 10px;">
+                                <img src="https://www.twoinchbrush.com/images/painting235.webp" alt="Ocean Sunrise" >
                             </div>
-                            <div class="slide slide2" style="margin-top: 10px;">
+                            <div class="slide slide2 fade1" style="margin-top: 10px;">
                                
                                 <img src="https://www.twoinchbrush.com/images/painting325.webp" alt="Summer in the Mountain">
                             </div>
-                            <div class="slide slide3" style="margin-top: 10px;">
-                                <img src="https://www.twoinchbrush.com/images/painting246.webp" alt="Winter Sawscape">
+                            <div class="slide slide3 slide-right" style="margin-top: 10px;">
+                                <img src="https://www.twoinchbrush.com/images/painting83.webp" alt="Mountain Beauty">
                             </div>
                         </td>
                     </tr>
