@@ -91,6 +91,20 @@
             display: block;
         }
         /* Responsive styles */
+
+        @media screen and (max-width: 600px) {
+            .mobile{ width: 100% !important;}
+            .block {width: 100% !important; display: block !important;}
+            
+        }
+
+
+        a.button:hover{
+            box-shadow: 0 12 24 rgba(0, 0, 0, .5) !important;
+            background-color: tomato !important; 
+            transform: translateY(10px);
+        }
+
         /* 
       originally all fonts were in rem; however, 
       rem has poor email support so this resource was used to convert rems to pxs: 
@@ -109,29 +123,28 @@
         <tr>
             <td align="center">
                 <!--inner fixed table -->
-
-                <table border="0" role="presentation" cellpadding="0" cellspacing="0" width="600">
+                <table border="0" role="presentation" cellpadding="0" cellspacing="0" width="600" class="mobile">
                     <!--image -->
                     <tr>
                         <td align="center">
                             <img src="https://cf.geekdo-images.com/I0dO3GEStulLd88B7NHavw__opengraph_left/img/OR5Fo2bb4jbBWblI1kdv4J336Kk=/fit-in/445x445/filters:strip_icc()/pic3652437.jpg"
                                 alt="portrait photo of Bob Ross" width="600" border="0" style="
-                    display: block;
-                    max-width: 100%;
-                    min-width: 100px;
-                    width: 50%;
-                    border-radius: 50%;
-                  " />
+                                display: block;
+                                max-width: 100%;
+                                min-width: 100px;
+                                width: 50%;
+                                border-radius: 50%;
+                            " />
                         </td>
                     </tr>
                     <!--headline -->
                     <tr>
                         <td align="center">
                             <h1 style="
-                    text-align: center;
-                    font-size: 68px;
-                    font-weight: normal;
-                  ">
+                                    text-align: center;
+                                    font-size: 68px;
+                                    font-weight: normal;
+                            ">
                                 Welcome Friends
                             </h1>
 
@@ -169,10 +182,9 @@
                             </h2>
                         </td>
                     </tr>
-
+                    <!-- 2 column layout-->
                     <tr id="2-column">
                         <td>
-                            <!-- 2 column root table -->
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"
                                 class="block">
                                 <tr>
@@ -188,7 +200,7 @@
                                         </table>
                                         <!-- right table-->
                                         <table role="presentation" align="right" border="0" cellpadding="0"
-                                            cellspacing="0" width="48%">
+                                            cellspacing="0" width="48%" class="block">
                                             <tr>
                                                 <td>
                                                     <h2 style="font-weight: normal; font-style: italic;">We Have Happy Accidents</h2>
@@ -202,7 +214,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <p> here are some of the tools the seminar will be practicing with</p>
+                            <p style="font-size: 18px;"> here are some of the tools the seminar will be practicing with</p>
                         </td>
                     </tr>
                     <!-- three column section-->
@@ -216,11 +228,20 @@
                                         <table border="0" align="left" cellpadding="0" cellspacing="0"
                                             role="presentation" width="33%" class="block">
                                             <tr>
-                                                <td id="pallete-knife">
-                                                    <h3 style="font-weight: normal; font-size: 22px;">
-                                                        The Almighty Pallete Knife
+                                                <td id="pallete-knife" align="center">
+                                                    <h3 style="font-weight: normal; text-align: left; font-size: 22px;">
+                                                        The Pallete Knife
                                                     </h3>
-                                                    <img src="https://cdn11.bigcommerce.com/s-3svqmxmj8l/images/stencil/100x100/products/2621/3846/Bob_Ross_10_Painting_Knife-CU__60149.1656603443.jpg?c=2" alt="Pallete Knife">
+                                                    <img src="https://cdn11.bigcommerce.com/s-3svqmxmj8l/images/stencil/100x100/products/2621/3846/Bob_Ross_10_Painting_Knife-CU__60149.1656603443.jpg?c=2" 
+                                                    alt="Pallete Knife" 
+                                                    width="600"
+                                                    style="
+                                                    display: block;
+                                                    max-width: 100%;
+                                                    min-width: 100px;
+                                                    width: 100%;
+                                                    height: auto;
+                                                ">
                                                 </td>
                                             </tr>
                                         </table>
@@ -228,11 +249,20 @@
                                         <table align="right" border="0" cellpadding="0" cellspacing="0"
                                             role="presentation" width="33%" class="block">
                                             <tr>
-                                                <td id="fan-brush">
+                                                <td id="fan-brush" align="center">
                                                     <h3 style="font-weight: normal; font-size: 22px;">
                                                         #6 fan brush
                                                     </h3>
-                                                    <img src="https://cdn11.bigcommerce.com/s-3svqmxmj8l/images/stencil/100x100/products/1872/3831/Bob_Ross_6_Fan_Blender-CU__40142.1656602820.jpg?c=2" alt="">
+                                                    <img src="https://cdn11.bigcommerce.com/s-3svqmxmj8l/images/stencil/100x100/products/1872/3831/Bob_Ross_6_Fan_Blender-CU__40142.1656602820.jpg?c=2" 
+                                                    alt="number six fan brush"
+                                                    width="600"
+                                                    style="
+                                                    display: block;
+                                                    max-width: 100%;
+                                                    min-width: 100px;
+                                                    width: 100%;
+                                                    height: auto;
+                                                    ">
                                                 </td>
                                             </tr>
                                         </table>
@@ -240,11 +270,20 @@
                                         <table align="right" border="0" cellpadding="0" cellspacing="0"
                                             role="presentation" width="33%" class="block">
                                             <tr>
-                                                <td id="2-inch-brush">
+                                                <td id="2-inch-brush" align="center">
                                                     <h3 style="font-weight: normal; font-size: 22px;">
                                                         the 2" brush
                                                     </h3>
-                                                    <img src="https://cdn11.bigcommerce.com/s-3svqmxmj8l/images/stencil/100x100/products/1787/3839/Bob_Ross_2in_Background_Brush-CU__54096.1656603202.jpg?c=2" alt="two inch brush">
+                                                    <img src="https://cdn11.bigcommerce.com/s-3svqmxmj8l/images/stencil/100x100/products/1787/3839/Bob_Ross_2in_Background_Brush-CU__54096.1656603202.jpg?c=2" 
+                                                    alt="two inch brush"
+                                                    width="600"
+                                                    style="
+                                                    display: block;
+                                                    max-width: 100%;
+                                                    min-width: 100px;
+                                                    width: 100%;
+                                                    height: auto;
+                                                    ">
                                                 </td>
                                             </tr>
                                         </table>
@@ -255,10 +294,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <p style="font-size: 16px;">
-                                we're pleased to announce that we will be having a painting seminar in your area. please
-                                click the link below to reserve your spot
-                            </p >
+
                             <p style="font-size: 16px;">
                                 take a look at what some of our fantastic friends, like you, have made
                             </p>
@@ -295,32 +331,41 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <p style="font-size: 16px;">
+                                we're pleased to announce that we will be having a painting seminar in your area. please
+                                click the link below to reserve your spot
+                            </p>
+                        </td>
+                    </tr>
                     <!-- button -->
                     <tr>
                         <td align="center">
-                            <a style="
-                    padding: 1em 0;
-                    background-color: #05f;
-                    color: #fff;
-                    text-align: center;
-                    border: 2px solid #000;
-                    font-size: 18px;
-                    display: block;
-                    max-width: 30%;
-                    min-width: 375px;
-                    margin: auto;
-                    border-radius: 4px;
-                    margin-bottom: 20px;
-                  " href="#">click to reserve your spot</a>
+                            <a class="button" style="
+                                padding: 1em 0;
+                                background-color: #05f;
+                                color: #fff;
+                                text-align: center;
+                                font-size: 18px;
+                                display: block;
+                                max-width: 30%;
+                                min-width: 350px;
+                                margin: auto;
+                                border-radius: 4px;
+                                margin-bottom: 20px;
+                            " href="#">
+                            click to reserve your spot
+                            </a>
                         </td>
                     </tr>
                     <!--footer -->
                     <tr>
                         <td style="
-                  margin: auto;
-                  font-size: 24px;
-                  border-top: 2px solid #333;
-                ">
+                                margin: auto;
+                                font-size: 24px;
+                                border-top: 2px solid #333;
+                        ">
                             <p style="margin-left: 20px">
                                 feel free to <a href="#">unsubscribe</a>
                             </p>
