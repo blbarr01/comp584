@@ -9,6 +9,19 @@ html {
   *:before, 
   *:after {
     box-sizing: inherit;
+    --Alizarin-Crimson: #4E1500;
+    --Bright-Red: 	    #DB0000;
+    --Cadium-Yellow:    #FFEC00;
+    --Dark-Sienna: 	    #5F2E1F;
+    --Indian-Yellow:    #FFB800;
+    --Midnight-Black: 	#000000;
+    --Phthalo-Blue: 	#0C0040;
+    --Phthalo-Green: 	#102E3C;
+    --Prussian-Blue: 	#021E44;
+    --Sap-Green:	    #0A3410;
+    --Titanium-White: 	#FFFFFF;
+    --Van-Dyke-Brown: 	#221B15;
+    --Yellow-Ochre: 	#C79B00;
   }
   
   body {
@@ -57,10 +70,36 @@ html {
   
 
 
+  img{
+    animation: border-animation 4s ease-in forwards infinite;
+  }
 
 
+  @keyframes border-animation {
+    
+    0%{
+        border: 5px solid var(--Alizarin-Crimson);
+    }
 
+    20%{
+        border: 5px solid var(--Bright-Red);
 
+    }
+
+    40%{
+        border: 5px solid var(--Cadium-Yellow);;
+    }
+    60%{
+        border: 5px solid var(--Indian-Yellow);
+    }
+    80%{
+        border: 5px solid var(--Phthalo-Blue);
+    }
+    100%{
+        border: 5px solid var(--Phthalo-Green);
+    }
+
+  }
 
 
   /* Tablet Landscape Screen Sizes */
