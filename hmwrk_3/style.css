@@ -22,6 +22,9 @@ html {
     --Titanium-White: 	#FFFFFF;
     --Van-Dyke-Brown: 	#221B15;
     --Yellow-Ochre: 	#C79B00;
+
+    --light-yellow: #FFFCE6;
+    --light-blue:#A3CDD9;
   }
   
   body {
@@ -60,18 +63,25 @@ html {
   
   /* Add background colors to see how much space each column is taking */
     
-  .col-1 {
-      background-color: #A3CDD9;
+  .col-1, .col-third {
+      background-color:var(--light-blue) ;
   }
   
-  .col-2 {
+  .col-2, .col-half {
       background-color: #FFFCE6;
   }
   
+  .col-3{
+    background-color: var(--Indian-Yellow);
+  }
+  .col-4{
+    background-color: #bbb;
+  }
+
 
 
   img{
-    animation: border-animation 4s ease-in forwards infinite;
+    animation: border-animation 5s ease-in forwards 1;
   }
 
 
@@ -87,16 +97,16 @@ html {
     }
 
     40%{
-        border: 5px solid var(--Cadium-Yellow);;
+        border: 5px solid var(--Phthalo-Green);
     }
     60%{
-        border: 5px solid var(--Indian-Yellow);
+        border: 5px solid var(--Sap-Green);
     }
     80%{
-        border: 5px solid var(--Phthalo-Blue);
+        border: 5px solid var(--Prussian-Blue);
     }
     100%{
-        border: 5px solid var(--Phthalo-Green);
+        border: 5px solid var(--Phthalo-Blue);
     }
 
   }
@@ -110,36 +120,37 @@ html {
           flex: 0 0 44%;
       }
     
+      .col-third, .col-half{
+        flex: 0 0, 92%;
+    }
     
-  
+    .col-half{
+        order: 1;
+      }
   
   }
   /* Desktop screen Sizes */
   @media only screen and (min-width: 768px) {
     
     
-       .col-1 {
+       .col-1, .col-third {
           flex: 0 0 20%;
       }
     
     
     
-      .col-2 {
+      .col-2, .col-half{
           flex: 0 0 44%;
       }
 
-      .col-33{
-        flex: 0 0 22%;
-        border: 2px solid slateblue;
+
+      
+      .col-3{
+        flex: 0 0 68%;
       }
 
-      .col-66{
-        flex: 0 0 66%;
-        border: 2px solid slateblue;
-      }
-
-      .col-100{
-        flex: 0 0 90%;
+      .col-4{
+        flex: 0 0 92%;
       }
   
   }
