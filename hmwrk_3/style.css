@@ -79,7 +79,6 @@ html {
   }
 
 
-
   img{
     animation: border-animation 5s ease-in forwards 1;
   }
@@ -125,7 +124,7 @@ html {
     }
     
     .col-half{
-        order: 1;
+        order: -1;
       }
   
   }
@@ -138,13 +137,13 @@ html {
       }
     
     
-    
       .col-2, .col-half{
           flex: 0 0 44%;
       }
 
-
-      
+    .col-half{
+        order: initial;
+    }    
       .col-3{
         flex: 0 0 68%;
       }
