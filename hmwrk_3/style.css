@@ -9,7 +9,7 @@ html {
   *:before, 
   *:after {
     box-sizing: inherit;
-    --Alizarin-Crimson: #4E1500;
+    --Alizarin-Crimson: #E32636;
     --Bright-Red: 	    #DB0000;
     --Cadium-Yellow:    #FFEC00;
     --Dark-Sienna: 	    #5F2E1F;
@@ -26,6 +26,101 @@ html {
     --light-yellow: #FFFCE6;
     --light-blue:#A3CDD9;
   }
+
+  #AC::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Alizarin-Crimson);
+  }
+
+  #BR::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Bright-Red);
+  }
+  #CY::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Cadium-Yellow);
+  }
+  #DS::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Dark-Sienna);
+  }
+  #IY::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Indian-Yellow);
+  }
+  #PB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Phthalo-Blue);
+  }
+  #PG::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Phthalo-Green);
+  }
+  #PRB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Prussian-Blue);
+  }
+  #SG::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Sap-Green);
+  }
+  #VDB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Van-Dyke-Brown);
+  }
+  #MB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Midnight-Black);
+  }
+  #YO::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Yellow-Ochre);
+  }
+  #TW::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Titanium-White);
+    border: 1px solid black;
+  }
+
   
   body {
       font-family: Arial, Geneva, sans-serif;
@@ -61,6 +156,11 @@ html {
       flex: 0 0 92%;
   }
   
+  .color-item{
+    /* background-color: var(--light-blue);
+    border: 2px solid black; */
+  }
+
   /* Add background colors to see how much space each column is taking */
     
   .col-1, .col-third {
@@ -78,11 +178,16 @@ html {
     background-color: #bbb;
   }
 
-
+  .col-12{
+    margin-bottom: 2em;
+  }
   img{
     animation: border-animation 5s ease-in forwards 1;
   }
 
+  #color-palette{
+    text-align: center;
+  }
 
   @keyframes border-animation {
     
@@ -126,6 +231,10 @@ html {
     .col-half{
         order: -1;
       }
+
+    .col-12{
+      flex: 0 0 20%;
+    }
   
   }
   /* Desktop screen Sizes */
@@ -150,6 +259,11 @@ html {
 
       .col-4{
         flex: 0 0 92%;
+      }
+
+      .col-12{
+        flex: 0 0 12%;
+        margin-bottom: 2em;
       }
   
   }
