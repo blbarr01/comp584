@@ -1,9 +1,87 @@
 
+html {
+    box-sizing: border-box;
+    font-family: "Ariel", sans-serif ;
+  }
+body{
+    margin: auto 0;
+}
+
+p,a, li{
+    font-size: 1.25rem;
+}
+.grid-wrapper{
+    display: grid;
+    gap: 1.5em;
+}
+
+[class*="col-"] {
+    margin: auto;
+    flex: 0 0 92%;
+}
+
+.product-card{
+    border: 2px solid magenta;
+    margin: 20px;
+}
+
+nav>ul{
+    list-style: none;
+}
+
+#site-banner{
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+}
 
 
+/* tablet styling -- apply these styles from 480 onwards */
+@media only screen and (min-width: 480px) {
+    nav>ul>li{
+        display: inline;
+    }
+}
 
-@media(min-width: 600px) {
-    .col-{
+/* desktop styling -- apply these styles from 480 onwards */
+@media only screen and (min-width:768px){
+    .grid-wrapper{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .col-1{
+        grid-column: 1fr;
+        border: 2px solid red;
+        padding: 2em;
 
     }
+
+    .col-2{
+        grid-column: span 2;
+        border: 2px solid blue;
+        display: flex;
+        flex-direction: row;
+        padding: 2em;
+        height: max-content;
+    }
+
+    .col-3{
+        grid-column: span 3;
+        border: 2px solid green;
+        display: flex;
+        flex-direction: row;
+
+    }
+    .col-4{
+        grid-column: span 4;
+        border: 2px solid green;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    [class*="col-"] {
+        margin: initial;
+        flex: initial;
+    }
+
 }
