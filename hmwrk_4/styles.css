@@ -16,13 +16,16 @@ p,a, li{
 }
 
 [class*="col-"] {
-    margin: auto;
-    flex: 0 0 92%;
+    grid-template-columns: 1fr;
+}
+
+img{
+    width: 200px;
+    height: 300px;
 }
 
 .product-card{
     border: 2px solid magenta;
-    margin: 20px;
 }
 
 nav>ul{
@@ -41,6 +44,11 @@ nav>ul{
     nav>ul>li{
         display: inline;
     }
+
+    .grid-wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 /* desktop styling -- apply these styles from 480 onwards */
@@ -62,6 +70,7 @@ nav>ul{
         flex-direction: row;
         padding: 2em;
         height: max-content;
+        justify-content: space-evenly;
     }
 
     .col-3{
@@ -69,6 +78,7 @@ nav>ul{
         border: 2px solid green;
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
 
     }
     .col-4{
@@ -76,12 +86,10 @@ nav>ul{
         border: 2px solid green;
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
 
     }
 
-    [class*="col-"] {
-        margin: initial;
-        flex: initial;
-    }
+
 
 }
