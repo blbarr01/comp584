@@ -1,0 +1,269 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+  }
+  /* inherit border-box on all elements in the universe and before and after
+   */
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: inherit;
+    --Alizarin-Crimson: #E32636;
+    --Bright-Red: 	    #DB0000;
+    --Cadium-Yellow:    #FFEC00;
+    --Dark-Sienna: 	    #5F2E1F;
+    --Indian-Yellow:    #FFB800;
+    --Midnight-Black: 	#000000;
+    --Phthalo-Blue: 	#0C0040;
+    --Phthalo-Green: 	#102E3C;
+    --Prussian-Blue: 	#021E44;
+    --Sap-Green:	    #0A3410;
+    --Titanium-White: 	#FFFFFF;
+    --Van-Dyke-Brown: 	#221B15;
+    --Yellow-Ochre: 	#C79B00;
+
+    --light-yellow: #FFFCE6;
+    --light-blue:#A3CDD9;
+  }
+
+  #AC::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Alizarin-Crimson);
+  }
+
+  #BR::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Bright-Red);
+  }
+  #CY::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Cadium-Yellow);
+  }
+  #DS::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Dark-Sienna);
+  }
+  #IY::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Indian-Yellow);
+  }
+  #PB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Phthalo-Blue);
+  }
+  #PG::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Phthalo-Green);
+  }
+  #PRB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Prussian-Blue);
+  }
+  #SG::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Sap-Green);
+  }
+  #VDB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Van-Dyke-Brown);
+  }
+  #MB::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Midnight-Black);
+  }
+  #YO::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Yellow-Ochre);
+  }
+  #TW::after{
+    content:'';
+    display: block;
+    height:30px;
+    width:auto;
+    background-color: var(--Titanium-White);
+    border: 1px solid black;
+  }
+
+  
+  body {
+      font-family: Arial, Geneva, sans-serif;
+  }
+  a {
+      color: #2772B0;
+  }
+  .wrapper {
+      width: 97%;
+      max-width: 1200px;
+      margin: 0 auto;
+      float: none;
+      background-color: #fff;
+  }
+  
+  div img {
+      width: 100%;
+      max-width: 225px; 
+  }
+  
+  /* grid system -- mobile first! */
+  /* flex contatiner */
+  
+  .row {
+      display: flex;
+      flex-flow: row wrap;
+  }
+  
+  /* attribute selector to give some margin between columns and apply styles to flex items */
+  
+  [class*="col-"] {
+      margin-left: 4%;
+      flex: 0 0 92%;
+  }
+  
+  .color-item{
+    /* background-color: var(--light-blue);
+    border: 2px solid black; */
+  }
+
+  /* Add background colors to see how much space each column is taking */
+    
+  .col-1, .col-third {
+      background-color:var(--light-blue) ;
+  }
+  
+  .col-2, .col-half {
+      background-color: #FFFCE6;
+  }
+  
+  .col-3{
+    background-color: var(--Indian-Yellow);
+  }
+  .col-4{
+    background-color: #bbb;
+  }
+
+  .col-12{
+    margin-bottom: 2em;
+  }
+  img{
+    animation: border-animation 5s ease-in forwards 1;
+  }
+
+  #color-palette{
+    text-align: center;
+  }
+
+  @keyframes border-animation {
+    
+    0%{
+        border: 5px solid var(--Alizarin-Crimson);
+    }
+
+    20%{
+        border: 5px solid var(--Bright-Red);
+
+    }
+
+    40%{
+        border: 5px solid var(--Phthalo-Green);
+    }
+    60%{
+        border: 5px solid var(--Sap-Green);
+    }
+    80%{
+        border: 5px solid var(--Prussian-Blue);
+    }
+    100%{
+        border: 5px solid var(--Phthalo-Blue);
+    }
+
+  }
+
+
+  /* Tablet Landscape Screen Sizes */
+  @media only screen and (min-width: 480px)  {
+      
+    .col-1,
+    .col-2 {
+          flex: 0 0 44%;
+      }
+    
+      .col-third, .col-half{
+        flex: 0 0, 92%;
+    }
+    
+    .col-half{
+        order: -1;
+      }
+
+    .col-12{
+      flex: 0 0 20%;
+    }
+  
+  }
+  /* Desktop screen Sizes */
+  @media only screen and (min-width: 768px) {
+    
+    
+       .col-1, .col-third {
+          flex: 0 0 20%;
+      }
+    
+    
+      .col-2, .col-half{
+          flex: 0 0 44%;
+      }
+
+    .col-half{
+        order: initial;
+    }    
+      .col-3{
+        flex: 0 0 68%;
+      }
+
+      .col-4{
+        flex: 0 0 92%;
+      }
+
+      .col-12{
+        flex: 0 0 12%;
+        margin-bottom: 2em;
+      }
+  
+  }
