@@ -1,18 +1,12 @@
 let productList = []; 
 
 $(document).ready(()=>{
-    console.log("init complete");
+
 fetch('https://dummyjson.com/products') //return http request object
 .then(res => res.json())  // convert request to json obj
 .then(data => data.products) // return an array of product objects 
-.then((products)=>{loadContainer(products); return null;})
+.then((products)=>{loadContainer(products)})
 .catch((error)=> console.error(error)); 
-
-
-console.log($(".col-1"));
-
-
-
 
 });
 
@@ -20,34 +14,38 @@ console.log($(".col-1"));
 
 function loadContainer(products){
     let gi = 0; 
-    let singlecols = Object.values($(".col-1")); 
-    let doublecols = Object.values($(".col-2"));
-    let SandD =  [...singlecols, ...doublecols];
-    console.log(SandD);
-    console.log(products);
+    let singleCols = Object.values($(".col-1")); 
+    let doubleCols = Object.values($(".col-2"));
+    let trippleCols = Object.values($(".col-3"));
+    let quatrainCols = Object.values($(".col-4"));
     
     const renderProducts = (container, count) =>{
-        container.forEach(col => {
-            for (let index = 0; index < count; index++) {
+        console.log(container);
+        console.log(count);
+        for (let index = 0; index < container.length - 2; index++) {
+            for(let j = 0; j <count; j++ ){
                 content = `
                 <div class="product-card">
-                <img src="${products[gi].images[0]}" alt="">
-                <h3 class="product-name"> ${products[gi].title}:<span> $ ${products[gi].price}</span> </h3>
-                <p class="product-desc">${products[gi].description}</p>
+                    <img src="${products[gi].images[0]}" alt="">
+                    <h3 class="product-name"> ${products[gi].title}:<span> $ ${products[gi].price}</span> </h3>
+                    <p class="product-desc">${products[gi].description}</p>
                 </div>   
                 `;
-                $(col).append(content);
                 gi++; 
+                $(content).appendTo(container[index]);
             }
-        });
+        }
     }
 
-    renderProducts(singlecols, 2);
+
+    renderProducts(singleCols, 1);
+    renderProducts(doubleCols, 1);
+    renderProducts(trippleCols, 1);
+    renderProducts(quatrainCols, 2);
 
 
 
-    console.log(products);
-    console.log(cols);
+
 
 
 
