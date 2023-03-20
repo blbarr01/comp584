@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+
+@keyframes product-card-load {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@keyframes header-load{
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
+
+
 html {
     box-sizing: border-box;
     font-family: "Poppins", "Ariel", sans-serif ;
@@ -14,32 +40,46 @@ p,a, li{
 .grid-wrapper{
     display: grid;
     gap: 1.5em;
+    grid-auto-flow: row;
+    grid-auto-flow: minmax(auto 300px);
 }
 
 [class*="col-"] {
-    grid-template-columns: 1fr;
+   grid-column: 1fr;
+   /* originally had these stylings on product car but they looked butt ugly */
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   padding: 10px;
+   border-radius: 33px;
 }
 
 img{
-    height: minmax(auto, 200px);
-    width: 100%;
+    height: auto;
+    max-width: 100%;
     border-radius: 33px;
+    max-height: 300px;
 }
 
 .product-card{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 10px;
-    border-radius: 33px;
+    animation: product-card-load 400ms ease-in;
+}
+.product-card:hover{
+    cursor: pointer;
 }
 
 nav>ul{
     list-style: none;
 }
 
+ul{
+    display: flex;
+    gap: 5em;
+}
+
 #site-banner{
     display: flex;
     place-items: center;
     flex-direction: column;
+    animation: header-load 300ms ease-in;
 }
 
 
@@ -51,6 +91,11 @@ nav>ul{
 
     .grid-wrapper{
         grid-template-columns: repeat(2, 1fr);
+        padding:5px
+    }
+
+    #A, #B, .col-tab, .col-3, .col-4{
+        grid-column: span 2;
     }
 
 }
@@ -59,20 +104,20 @@ nav>ul{
 @media only screen and (min-width:768px){
     .grid-wrapper{
         grid-template-columns: repeat(4, 1fr);
+        max-width: 1920px; 
+        margin: auto;
     }
     .col-1{
         grid-column: 1fr;
         /* border: 2px solid red; */
-        padding: 2em;
-
     }
+
 
     .col-2{
         grid-column: span 2;
         /* border: 2px solid blue; */
         display: flex;
         flex-direction: row;
-        padding: 2em;
         height: max-content;
         justify-content: space-between;
     }
@@ -95,5 +140,16 @@ nav>ul{
     }
 
 
+    #B {
+        grid-column: span 2;
+    }
+
+    #A{
+        grid-column: initial;
+    }
+
+    .col-tab{
+        grid-column:unset;
+    }
 
 }
