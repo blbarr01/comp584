@@ -15,34 +15,32 @@ fetch('https://dummyjson.com/products') //return http request object
 function loadContainer(products){
     // the global index helps me parse throught the array of products accross calls 
     let gi = 0; 
-    let singleCols = Object.values($(".col-1")); 
-    let doubleCols = Object.values($(".col-2"));
-    let trippleCols = Object.values($(".col-3"));
-    let quatrainCols = Object.values($(".col-4"));
+    let singleCols = $.makeArray($(".col-1"));
+    let doubleCols = $.makeArray($(".col-2"));
+    let trippleCols = $.makeArray($(".col-3"));
+    let quatrainCols = $.makeArray($(".col-4"));
+
+    let testarr = [...singleCols, ...doubleCols, ...trippleCols, ...quatrainCols];
     
-    const renderProducts = (container, count) =>{
-        console.log(container);
-        console.log(count);
-        for (let index = 0; index < container.length - 2; index++) {
-            for(let j = 0; j <count; j++ ){
-                content = `
-                <div class="product-card">
-                    <img src="${products[gi].images[0]}" alt="${products[gi].title}">
-                    <div class="product-details"> 
-                        <h3 class="product-name"> ${products[gi].title}:<span> $ ${products[gi].price}</span> </h3>
-                        <p class="product-desc">${products[gi].description}</p>
+    console.log(testarr);
+
+    const renderProducts = (container) =>{
+                container.forEach(element => {
+                    content = `
+                    <div class="product-card">
+                        <img src="${products[gi].images[0]}" alt="${products[gi].title}">
+                        <div class="product-details"> 
+                            <h3 class="product-name"> ${products[gi].title}:<span> $ ${products[gi].price}</span> </h3>
+                            <p class="product-desc">${products[gi].description}</p>
+                        </div>   
                     </div>   
-                </div>   
-                `;
-                gi++; 
-                $(content).appendTo(container[index]);
-            }
-        }
+                    `;
+                    gi++; 
+                    $(content).appendTo(element);
+                });
     }
 
-    renderProducts(singleCols, 1);
-    renderProducts(doubleCols, 1);
-    renderProducts(trippleCols, 1);
-    renderProducts(quatrainCols, 1);
+
+    renderProducts(testarr);
 
 }

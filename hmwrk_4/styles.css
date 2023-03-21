@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@property --gradient-angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
 
 *,
  *::after,
  *::before{
     --header-load-time: 300ms;
+    --clr-1: #000; 
+    --clr-2: #333; 
+    --clr-3: #666; 
+    --clr-4: #999; 
+    --clr-5: #ccc; 
  }
 
 
@@ -31,11 +40,38 @@ p,a, li{
 }
 
 [class*="col-"] {
-   grid-column: 1fr;
    /* originally had these stylings on product car but they looked butt ugly */
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
    padding: 10px;
    border-radius: 33px;
+   position: relative;
+}
+
+@keyframes rotation {
+    0%{ --gradient-angle: 0deg;}
+    100%{ --gradient-angle: 360deg;}
+}
+
+.product-card::after,
+.product-card::before{
+    content: "";
+    position: absolute;
+    inset: -.5rem;
+    background:conic-gradient(
+        from var(--gradient-angle),
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-3),
+        var(--clr-2),
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+}
+
+.product-card::after{
+    filter:blur(3.5rem)
 }
 
 img{
