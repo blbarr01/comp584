@@ -1,4 +1,4 @@
-let productList = []; 
+
 
 $(document).ready(()=>{
 
@@ -20,9 +20,9 @@ function loadContainer(products){
     let trippleCols = $.makeArray($(".col-3"));
     let quatrainCols = $.makeArray($(".col-4"));
 
-    let testarr = [...singleCols, ...doubleCols, ...trippleCols, ...quatrainCols];
+    let allCols = [...singleCols, ...doubleCols, ...trippleCols, ...quatrainCols];
     
-    console.log(testarr);
+    console.log(allCols);
 
     const renderProducts = (container) =>{
                 container.forEach(element => {
@@ -36,11 +36,11 @@ function loadContainer(products){
                     </div>   
                     `;
                     gi++; 
-                    $(content).appendTo(element);
+                    $(element).append(content);
                 });
     }
 
 
-    renderProducts(testarr);
+    renderProducts(allCols);
 
 }
