@@ -30,7 +30,7 @@ function loadContainer(products){
                     <div class="product-card">
                         <img src="${products[gi].images[0]}" alt="${products[gi].title}">
                         <div class="product-details"> 
-                            <h3 class="product-name"> ${products[gi].title}:<span> $ ${products[gi].price}</span> </h3>
+                            <h3 class="product-name"> ${products[gi].title}:<span>  $${products[gi].price}</span></h3>
                             <p class="product-desc">${products[gi].description}</p>
                         </div>   
                     </div>   
