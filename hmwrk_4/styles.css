@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("/product.css");
+
+
 @property --gradient-angle{
     syntax: "<angle>";
     initial-value: 0deg;
@@ -26,12 +29,17 @@ body{
     margin: auto 0;
 }
 
-
-
-
-p,a, li{
+p,
+a,
+li{
     font-size: 1.25rem;
 }
+
+a, a:visited{
+    color: #0083c5;
+}
+
+
 .grid-wrapper{
     display: grid;
     gap: 1.5em;
@@ -47,32 +55,6 @@ p,a, li{
    position: relative;
 }
 
-@keyframes rotation {
-    0%{ --gradient-angle: 0deg;}
-    100%{ --gradient-angle: 360deg;}
-}
-
-.product-card::after,
-.product-card::before{
-    content: "";
-    position: absolute;
-    inset: -.5rem;
-    background:conic-gradient(
-        from var(--gradient-angle),
-        var(--clr-1),
-        var(--clr-2),
-        var(--clr-3),
-        var(--clr-4),
-        var(--clr-3),
-        var(--clr-2),
-    );
-    border-radius: inherit;
-    animation: rotation 20s linear infinite;
-}
-
-.product-card::after{
-    filter:blur(3.5rem)
-}
 
 img{
     height: auto;
@@ -83,16 +65,7 @@ img{
 
 
 
-.product-card{
-    animation-name: product-card-load;
-    animation-duration: 600ms;
-    animation-timing-function: ease-in;
-    /* animation-delay: var(--header-load-time); */
-    animation-fill-mode: forwards;
-}
-.product-card:hover{
-    cursor: pointer;
-}
+
 
 
 #site-banner{
@@ -106,13 +79,17 @@ img{
 
 .site-nav{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5em;
     list-style: none;
+    width: 100%;
 }
 
+
+
 #site-footer{
-    
+    margin-top: 20px;
+    border-top: 2px solid rgba(125, 125, 125, 0.35);
 }
 
 
@@ -130,11 +107,16 @@ img{
         padding:5px
     }
 
-    #A, #B, .col-tab, .col-3, .col-4{
+    #A, #B, .col-tab,  .col-3, .col-4{
         grid-column: span 2;
     }
+
     #site-banner{
         flex-direction: row;
+    }
+
+    #C{
+        order: 1;
     }
 
 }
@@ -195,8 +177,11 @@ img{
 
     #A{
         grid-column: initial;
-    }
+    }   
 
+    #C{
+        order: initial;
+    }
     .col-tab{
         grid-column:unset;
     }
@@ -231,3 +216,11 @@ img{
         transform: translateY(0%);
     }
 }
+
+
+@keyframes rotation {
+    0%{ --gradient-angle: 0deg;}
+    100%{ --gradient-angle: 360deg;}
+}
+
+
