@@ -23,6 +23,21 @@
     /* animation-delay: var(--header-load-time); */
     animation-fill-mode: forwards;
 }
+
+.product-img-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 480px) {
+    .product-img-wrapper{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+
+
 .product-card:hover{
     cursor: pointer;
 }

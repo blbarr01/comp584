@@ -32,6 +32,8 @@ a:visited {
     padding: 10px;
     border-radius: 33px;
     position: relative;
+    align-items: center;
+    align-content: center;
 }
 
 [class*="col-"]:hover{
@@ -65,8 +67,7 @@ img {
     flex-direction: column;
     animation: header-load var(--header-load-time) ease-in;
     border-bottom: 2px solid rgba(125, 125, 125, 0.35);
-
-
+    margin-bottom: 2em;
 }
 
 .site-nav {
@@ -85,7 +86,6 @@ img {
     display: grid;
     gap: 1.5em;
     grid-auto-flow: row;
-    grid-auto-flow: minmax(auto 300px);
 }
 
 #site-footer {
@@ -115,18 +115,23 @@ img {
 
     .grid-wrapper {
         grid-template-columns: repeat(2, 1fr);
-        padding: 5px
+        padding: 5px;
     }
 
     #A,
     #B,
+    #E,
+    #D,
     .col-tab,
     .col-3,
-    .col-4 {
+    .col-4,
+    .col-2x3 {
         grid-column: span 2;
     }
 
-
+    .col-2x3 {
+        grid-row: span 2;
+    }
 
     #C {
         order: 1;
@@ -136,7 +141,7 @@ img {
 
 
 
-/* desktop styling -- apply these styles from 480 onwards */
+/* desktop styling -- apply these styles from 1080 onwards */
 @media only screen and (min-width:1081px) {
     .grid-wrapper {
         grid-template-columns: repeat(4, 1fr);
@@ -184,19 +189,24 @@ img {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-
     }
 
 
-    #B {
+    .col-2x3{
+        grid-column: span 3;
+        grid-row: span 2;
+        display: flex;
+    }
+
+    #B, #E {
         grid-column: span 2;
     }
 
-    #A {
+    #A, #D {
         grid-column: initial;
     }
 
-    #C {
+    #C, #D {
         order: initial;
     }
 
@@ -210,7 +220,7 @@ img {
     #site-banner,
     .grid-wrapper,
     #site-footer {
-        margin: auto;
+        margin:2em auto;
     }
 }
 
