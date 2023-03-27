@@ -93,6 +93,19 @@ img {
     border-top: 2px solid rgba(125, 125, 125, 0.35);
 }
 
+.socials{
+    display: flex;
+    gap: 1em;
+}
+
+.social-link{
+    color: grey;
+    font-size: 2rem;
+}
+
+.social-link:hover{
+    color: #0083c5;
+}
 
 /* tablet styling -- apply these styles from 480 onwards */
 @media only screen and (min-width: 480px) {
@@ -112,6 +125,7 @@ img {
     #site-title {
         display: block;
     }
+
 
     .grid-wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -136,6 +150,13 @@ img {
     #C {
         order: 1;
     }
+
+    #site-footer{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
 
 }
 
