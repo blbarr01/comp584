@@ -96,7 +96,7 @@ img {
 .socials{
     display: flex;
     gap: 1em;
-    margin-right: 1.5em;
+    margin-left: 1.5em;
 }
 
 .social-link{
@@ -130,7 +130,7 @@ img {
 
     .grid-wrapper {
         grid-template-columns: repeat(2, 1fr);
-        padding: 5px;
+        padding: .3125em; /*5px*/
     }
 
     #A,
@@ -163,7 +163,10 @@ img {
         justify-content: space-between;
     }
 
-
+    .socials{
+        margin: 1em 1.5em 0 0;
+      }
+    
 
 }
 
