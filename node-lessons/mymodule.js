@@ -13,7 +13,7 @@ module.exports = function(dir, ext, callBack){
             return callBack(error);
         
         filtered_files = files.filter((element)=>{
-            return extname(element) === ext
+            return extname(element) === "."+ext
         })    
         return callBack(null, filtered_files)
     })
