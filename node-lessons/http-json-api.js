@@ -1,8 +1,10 @@
 const {createServer} = require('http');
 const url = require('url')
 
-
+// create an instance of a server. 
+// in this case the server just return json 
 const server = createServer((req, res)=>{
+// we use obj destructuring to pull the path and query from the request
     const {query, pathname} = url.parse(req.url, true)
     const date = new Date(query.iso)
     

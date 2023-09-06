@@ -1,0 +1,42 @@
+node is a server run time environment. turning js into the
+ equivalent of php
+
+the main uses of node is creating servers, servers return files so you 
+need to have acces to the file system 
+
+
+--global obj replaces the window option from browser
+additionally it adds some helpful utilities 
+
+    process: A global object that provides information about the current Node.js process, such as environment variables, command-line arguments, and process metrics.
+
+    console: A global object that provides methods for logging messages to the console, such as console.log(), console.error(), and console.warn().
+
+    Buffer: A global constructor function that provides a way to work with binary data, such as reading and writing files or network sockets.
+
+    setTimeout(), setInterval(), clearTimeout(), clearInterval(): Global functions that provide a way to schedule code to run at a later time or on a recurring basis.
+
+    require(): A global function that is used to load modules in Node.js.
+
+    __dirname: A global variable that contains the absolute path of the directory where the currently executing script resides.
+
+    __filename: A global variable that contains the absolute path of the currently executing script.
+
+
+-- event module 
+
+
+transporting data involves 
+    -buffers 
+        are storage areas for incoming data 
+        when the buffer is full data is sent
+    -streams 
+        streams:
+            read data from
+            &
+            write data to
+        common example is reading from a file 
+        and writing to a socket.
+        the short hadn fpr this read to write is a pipe  
+    -pipes 
+
